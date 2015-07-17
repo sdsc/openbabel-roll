@@ -1,0 +1,7 @@
+#%Module1.0
+module-whatis "openbabel"
+module-whatis "Version: VERSION"
+module-whatis "Description: openbabel"
+setenv OPENBABELHOME /opt/openbabel
+prepend-path PATH /opt/openbabel/bin
+prepend-path LD_LIBRARY_PATH /opt/openbabel/lib
