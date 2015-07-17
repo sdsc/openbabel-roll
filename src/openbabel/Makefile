@@ -80,19 +80,21 @@ build: $(SRC_DIRS)
 	  cd $(SOURCE_DIR); \
           mkdir build; \
           cd build; \
-          cmake  -DCMAKE_INSTALL_PREFIX=$(ROOT)/$(PKGROOT) ..; \
+          cmake  -DCMAKE_INSTALL_PREFIX=$(PKGROOT) ..; \
 	  $(MAKE); \
 	)
 	@echo "::: Package $(NAME) build complete :::"
 	
 install::
 	mkdir -p $(ROOT)/$(PKGROOT)/test
+	$(PKGROOT_BIND_MOUNT)
 	( \
           module load python; \
 	  cd $(SOURCE_DIR)/build; \
 	  $(MAKE) install; \
           cp ../../exam01.out $(ROOT)/$(PKGROOT)/test \
 	)
+	$(PKGROOT_BIND_UMOUNT)
 	$(INSTALL_LICENSE_FILES)
 	@echo "::: Package $(NAME) install complete :::"
 
