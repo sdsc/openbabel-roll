@@ -80,7 +80,7 @@ build: $(SRC_DIRS)
 	  cd $(SOURCE_DIR); \
           mkdir build; \
           cd build; \
-          cmake  -DCMAKE_INSTALL_PREFIX=$(PKGROOT) ..; \
+          cmake  -DCMAKE_INSTALL_PREFIX=$(ROOT)/$(PKGROOT) ..; \
 	  $(MAKE); \
 	)
 	@echo "::: Package $(NAME) build complete :::"
