@@ -2,7 +2,7 @@
 
 ## Overview
 
-This roll bundles... <REPLACE_ME> 
+This roll bundles... <openbabel> 
 
 For more information about the various packages included in the openbabel roll please visit their official web pages:
 
