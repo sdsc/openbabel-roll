@@ -12,9 +12,9 @@
 	All rights reserved. Rocks(r) v6.1.1 www.rocksclusters.org
 	</copyright>
 
-	<package>openbabel</package>
-	<package>openbabel-modules</package>
-	<package>openbabel-roll-test</package>
+	<package>sdsc-openbabel</package>
+	<package>sdsc-openbabel-modules</package>
+	<package>sdsc-openbabel-roll-test</package>
 
 
 </kickstart>
