@@ -5,7 +5,7 @@ COMPILERNAME := $(firstword $(subst /, ,$(ROLLCOMPILER)))
 
 NAME           = sdsc-openbabel
 VERSION        = 2.3.2
-RELEASE        = 1
+RELEASE        = 2
 PKGROOT        = /opt/openbabel
 
 SRC_SUBDIR     = openbabel

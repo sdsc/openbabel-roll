@@ -64,9 +64,10 @@ include $(SDSCDEVEL)/Rules.mk
 $(NAME).spec: DESCRIPTION LICENSE
 
 DESCRIPTION:
+	$(MODULE_LOAD_PYTHON); \
 	( \
 	  $(DESCRIBE_PKG); \
-          $(MODULE_LOAD_PYTHON); \
+	  $(DESCRIBE_PYTHON) \
 	) > $@
 
 LICENSE: $(SRC_DIRS)
@@ -76,11 +77,11 @@ LICENSE: $(SRC_DIRS)
 build: $(SRC_DIRS)
 	( \
 	  $(MODULE_LOAD_CMAKE); \
-	  module load python; \
+	  $(MODULE_LOAD_PYTHON); \
 	  cd $(SOURCE_DIR); \
-          mkdir build; \
-          cd build; \
-          cmake  -DCMAKE_INSTALL_PREFIX=$(PKGROOT) ..; \
+	  mkdir build; \
+	  cd build; \
+	  cmake -DCMAKE_INSTALL_PREFIX=$(PKGROOT) ..; \
 	  $(MAKE); \
 	)
 	@echo "::: Package $(NAME) build complete :::"
@@ -89,10 +90,10 @@ install::
 	mkdir -p $(ROOT)/$(PKGROOT)/test
 	$(PKGROOT_BIND_MOUNT)
 	( \
-          module load python; \
+	  $(MODULE_LOAD_PYTHON); \
 	  cd $(SOURCE_DIR)/build; \
 	  $(MAKE) install; \
-          cp ../../exam01.out $(ROOT)/$(PKGROOT)/test \
+	  cp ../../exam01.out $(ROOT)/$(PKGROOT)/test \
 	)
 	$(PKGROOT_BIND_UMOUNT)
 	$(INSTALL_LICENSE_FILES)
