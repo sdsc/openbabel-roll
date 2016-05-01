@@ -1,11 +1,6 @@
-ifndef ROLLCOMPILER
-  ROLLCOMPILER = gnu
-endif
-COMPILERNAME := $(firstword $(subst /, ,$(ROLLCOMPILER)))
-
 NAME           = sdsc-openbabel
 VERSION        = 2.3.2
-RELEASE        = 2
+RELEASE        = 3
 PKGROOT        = /opt/openbabel
 
 SRC_SUBDIR     = openbabel
