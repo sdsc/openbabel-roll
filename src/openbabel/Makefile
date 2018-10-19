@@ -70,7 +70,7 @@ DESCRIPTION:
 	$(MODULE_LOAD_PYTHON); \
 	( \
 	  $(DESCRIBE_PKG); \
-          $(DESCRIBE_CC);
+          $(DESCRIBE_CC); \
 	  $(DESCRIBE_PYTHON) \
 	) > $@
 
