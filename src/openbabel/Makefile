@@ -97,7 +97,7 @@ install::
 	$(PKGROOT_BIND_MOUNT)
 	( \
 	  $(MODULE_LOAD_PYTHON); \
-          $(MODULE_LOAD_CC): \
+          $(MODULE_LOAD_CC); \
 	  cd $(SOURCE_DIR)/build; \
 	  $(MAKE) install; \
 	  cp ../../exam01.out $(ROOT)/$(PKGROOT)/test \
