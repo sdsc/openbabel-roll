@@ -1,6 +1,6 @@
 NAME           = sdsc-openbabel
-VERSION        = 2.3.2
-RELEASE        = 4
+VERSION        = 2.4.1
+RELEASE        = 0
 PKGROOT        = /opt/openbabel
 
 SRC_SUBDIR     = openbabel
