@@ -61,12 +61,16 @@ include Rules.mk
 include $(SDSCDEVEL)/Pull.mk
 include $(SDSCDEVEL)/Rules.mk
 
+ROLLCOMPILER=gnu
+
+
 $(NAME).spec: DESCRIPTION LICENSE
 
 DESCRIPTION:
 	$(MODULE_LOAD_PYTHON); \
 	( \
 	  $(DESCRIBE_PKG); \
+          $(DESCRIBE_CC);
 	  $(DESCRIBE_PYTHON) \
 	) > $@
 
@@ -78,6 +82,7 @@ build: $(SRC_DIRS)
 	( \
 	  $(MODULE_LOAD_CMAKE); \
 	  $(MODULE_LOAD_PYTHON); \
+          $(MODULE_LOAD_CC): \
 	  cd $(SOURCE_DIR); \
 	  mkdir build; \
 	  cd build; \
@@ -91,6 +96,7 @@ install::
 	$(PKGROOT_BIND_MOUNT)
 	( \
 	  $(MODULE_LOAD_PYTHON); \
+          $(MODULE_LOAD_CC): \
 	  cd $(SOURCE_DIR)/build; \
 	  $(MAKE) install; \
 	  cp ../../exam01.out $(ROOT)/$(PKGROOT)/test \
