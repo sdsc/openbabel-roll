@@ -5,3 +5,4 @@ module-whatis "Description: openbabel"
 setenv OPENBABELHOME /opt/openbabel
 prepend-path PATH /opt/openbabel/bin
 prepend-path LD_LIBRARY_PATH /opt/openbabel/lib
+module load gnu
